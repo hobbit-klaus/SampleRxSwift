@@ -12,18 +12,23 @@ import RxCocoa
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var btnAdd: UIButton!
     @IBOutlet weak var tableView: UITableView!
     private let disposeBag = DisposeBag()
+    
+    var items = [String]()
+    var itemsRelay = BehaviorRelay(value: [String]())
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let items = Observable.just(
-            (1...5).map { "\($0)" }
-        )
+        self.btnAdd.rx.tap.subscribe(onNext: {
+            self.items.append("\(self.items.count + 1)")
+            self.itemsRelay.accept(self.items)
+        }).disposed(by: disposeBag)
         
         // 각 셀을 구성한다.
-        items
+        itemsRelay
             .bind(to: tableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self)) { (row, element, cell) in
                 cell.textLabel?.text = "\(element)"
             }
