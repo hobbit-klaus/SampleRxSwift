@@ -7,37 +7,36 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var tableView: UITableView!
     
-    let items = ["1", "2", "3", "4", "5"]
+    @IBOutlet weak var tableView: UITableView!
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
+        let items = Observable.just(
+            (1...5).map { "\($0)" }
+        )
+        
+        // 각 셀을 구성한다.
+        items
+            .bind(to: tableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self)) { (row, element, cell) in
+                cell.textLabel?.text = "\(element)"
+            }
+            .disposed(by: disposeBag)
+        
+        // 셀을 클릭했을 때 데이터 값을 출력한다.
+        tableView.rx
+            .modelSelected(String.self)
+            .subscribe(onNext:  {
+                print("\($0)")
+            })
+            .disposed(by: disposeBag)
     }
     
-}
-
-extension ViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = self.items[indexPath.row]
-        return cell
-    }
-}
-
-extension ViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("\(self.items[indexPath.row])")
-    }
 }
 
