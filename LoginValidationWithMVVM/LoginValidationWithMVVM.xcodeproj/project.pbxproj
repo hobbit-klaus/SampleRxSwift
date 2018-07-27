@@ -13,6 +13,7 @@
 		0E3938F8210ABBA800B8B19B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E3938F6210ABBA800B8B19B /* Main.storyboard */; };
 		0E3938FA210ABBA800B8B19B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3938F9210ABBA800B8B19B /* Assets.xcassets */; };
 		0E3938FD210ABBA800B8B19B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E3938FB210ABBA800B8B19B /* LaunchScreen.storyboard */; };
+		0E393905210ABF6C00B8B19B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E393904210ABF6C00B8B19B /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		0E3938F9210ABBA800B8B19B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E3938FC210ABBA800B8B19B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E3938FE210ABBA800B8B19B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E393904210ABF6C00B8B19B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		7503C69BA8CBC8D4DB9C350F /* Pods_LoginValidationWithMVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoginValidationWithMVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAEB674FF4FF2BED9DB26D2E /* Pods-LoginValidationWithMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginValidationWithMVVM.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoginValidationWithMVVM/Pods-LoginValidationWithMVVM.release.xcconfig"; sourceTree = "<group>"; };
 		CE3ACD4A6D067EE5C4331146 /* Pods-LoginValidationWithMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginValidationWithMVVM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoginValidationWithMVVM/Pods-LoginValidationWithMVVM.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				0E3938F9210ABBA800B8B19B /* Assets.xcassets */,
 				0E3938FB210ABBA800B8B19B /* LaunchScreen.storyboard */,
 				0E3938FE210ABBA800B8B19B /* Info.plist */,
+				0E393904210ABF6C00B8B19B /* LoginViewModel.swift */,
 			);
 			path = LoginValidationWithMVVM;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			files = (
 				0E3938F5210ABBA800B8B19B /* ViewController.swift in Sources */,
 				0E3938F3210ABBA800B8B19B /* AppDelegate.swift in Sources */,
+				0E393905210ABF6C00B8B19B /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
